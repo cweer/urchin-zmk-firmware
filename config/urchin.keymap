@@ -62,35 +62,62 @@
 		};
 	};
 
-	combos {
-		compatible = "zmk,combos";
-		// both right thumb keys
-		combo_accent {
-			timeout-ms = <200>;
-			key-positions = <32 33>;
-			bindings = <&mo ACCENT>;
-		};
-		// internal-left & external-right thumb keys
-		combo_sym2 {
-			timeout-ms = <200>;
-			key-positions = <31 33>;
-			bindings = <&mo SYM2>;
-		};
-		// both left thumb keys
-		combo_settings {
-			timeout-ms = <200>;
-			key-positions = <30 31>;
-			bindings = <&mo SETTINGS>;
-		};
-		// left index & middle fingers (home-row)
-		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
-	};
+    combos {
+        compatible = "zmk,combos";
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+            require-prior-idle-ms = <75>;
+        };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <8 9>;
+            require-prior-idle-ms = <75>;
+        };
+
+        lctrl {
+            bindings = <&sk LCTRL>;
+            key-positions = <11 12>;
+            require-prior-idle-ms = <75>;
+        };
+
+        lalt {
+            bindings = <&sk LALT>;
+            key-positions = <20 21>;
+            require-prior-idle-ms = <75>;
+        };
+
+        lctrlalt {
+            bindings = <&sk LA(LCTRL)>;
+            key-positions = <1 2 3>;
+            require-prior-idle-ms = <75>;
+        };
+
+        lgui {
+            bindings = <&sk LGUI>;
+            key-positions = <22 23>;
+            require-prior-idle-ms = <75>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <29 28>;
+            require-prior-idle-ms = <75>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <19 18>;
+            require-prior-idle-ms = <75>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12 13>;
+        };
+    };
 
 	keymap {
 		compatible = "zmk,keymap";
