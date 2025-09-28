@@ -11,13 +11,12 @@
 #include "keymap_italian.h"
 
 // Layer definitions
-#define BASE 0
-#define SYM 1
-#define EXT 2
-#define FNC 3
-#define SYM2 4
-#define ACCENT 5
-#define SETTINGS 6
+#define MAC 0
+#define WIN 1
+#define RIG 2
+#define LEF 3
+#define TRI 4
+#define MOUSE 5
 // -----------------
 
 &sk {
