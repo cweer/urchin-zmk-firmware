@@ -57,7 +57,7 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <3 3>;
+            if-layers = <4 4>;
             then-layer = <4>;
         };
     };
@@ -156,16 +156,6 @@
             >;
         };
 
-        nav_layer {
-            display-name = "NAV";
-            bindings = <
-&trans   &trans    &trans     &trans   &trans  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
-&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans  &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &trans
-&trans   &trans    &trans     &trans   &trans  &kp HOME  &kp PG_DN      &kp PG_UP    &kp END    &bootloader
-                              &trans   &trans  &trans    &trans
-            >;
-        };
-
         num_layer {
             display-name = "NUM";
             bindings = <
@@ -173,6 +163,16 @@
 &kp DQT    &kp LBKT  &kp LBRC  &kp LPAR  &trans     &kp EQUAL  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS
 &kp SQT    &kp RBKT  &kp RBRC  &kp RPAR  &trans     &kp BSLH   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp FSLH
                                &trans    &trans     &trans     &trans
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+&trans   &trans    &trans     &trans   &trans  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
+&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans  &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &trans
+&trans   &trans    &trans     &trans   &trans  &kp HOME  &kp PG_DN      &kp PG_UP    &kp END    &bootloader
+                              &trans   &trans  &trans    &trans
             >;
         };
 
