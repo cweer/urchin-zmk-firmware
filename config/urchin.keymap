@@ -171,12 +171,34 @@
             label = "HIGHLIGHT_LINE";
         };
 
+        up10: up10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UP &kp UP &kp UP &kp UP &kp UP &kp UP &kp UP &kp UP &kp UP &kp UP>;
+            label = "up10";
+        };
+
         left10: left10 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT &kp LEFT>;
+            bindings = <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
             label = "LEFT10";
         };
+
+        right10: right10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT>;
+            label = "right10";
+        };
+
+        down10: down10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN>;
+            label = "down10";
+        };
+
     };
 
     keymap {
