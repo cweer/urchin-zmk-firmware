@@ -122,6 +122,16 @@
             bindings = <&unstick>;
             key-positions = <1 2>;
         };
+
+        tri-layer-r {
+            bindings = <&tog 4>;
+            key-positions = <9 19 29>;
+        };
+
+        tri-layer-l {
+            bindings = <&tog 4>;
+            key-positions = <0 10 20>;
+        };
     };
 
     macros {
