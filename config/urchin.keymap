@@ -170,6 +170,13 @@
             bindings = <&kp HOME &kp LS(END)>;
             label = "HIGHLIGHT_LINE";
         };
+
+        left10: left10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT &kp LEFT>;
+            label = "LEFT10";
+        };
     };
 
     keymap {
