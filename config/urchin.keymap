@@ -236,6 +236,13 @@
             bindings = <&kp LC(LS(LEFT))>;
             label = "HIGHLIGHT_PREV_WORD";
         };
+
+        tri_layer_print: tri_layer_print {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp T &kp R &kp I>;
+            label = "TRI_LAYER_PRINT";
+        };
     };
 
     keymap {
@@ -284,10 +291,10 @@
         tri_layer {
             display-name = "TRI";
             bindings = <
-&trans       &kp F7  &kp F8  &kp F9     &kp F10     &bt BT_CLR      &trans  &trans  &trans  &trans
-&trans       &kp F4  &kp F5  &kp F6     &kp F11     &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
-&bootloader  &kp F1  &kp F2  &kp F3     &kp F12     &trans          &trans  &trans  &trans  &bootloader
-                             &kp SPACE  &kp LSHIFT  &trans          &trans
+&tri_layer_print  &kp F7  &kp F8  &kp F9     &kp F10     &bt BT_CLR      &trans  &trans  &trans  &tri_layer_print
+&trans            &kp F4  &kp F5  &kp F6     &kp F11     &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
+&bootloader       &kp F1  &kp F2  &kp F3     &kp F12     &trans          &trans  &trans  &trans  &bootloader
+                                  &kp SPACE  &kp LSHIFT  &trans          &trans
             >;
         };
     };
