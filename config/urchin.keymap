@@ -140,16 +140,19 @@
         unstick {
             bindings = <&unstick>;
             key-positions = <1 2>;
+            require-prior-idle-ms = <75>;
         };
 
         tri-layer-r {
             bindings = <&tog 4>;
             key-positions = <9 19 29>;
+            require-prior-idle-ms = <75>;
         };
 
         tri-layer-l {
             bindings = <&tog 4>;
             key-positions = <0 10 20>;
+            require-prior-idle-ms = <75>;
         };
     };
 
@@ -199,6 +202,40 @@
             label = "down10";
         };
 
+        highlight_to_line_end: highlight_to_line_end {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END)>;
+            label = "HIGHLIGHT_TO_LINE_END";
+        };
+
+        highlight_to_line_start: highlight_to_line_start {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(HOME)>;
+            label = "HIGHLIGHT_TO_LINE_START";
+        };
+
+        highlight_current_word: highlight_current_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT))>;
+            label = "HIGHLIGHT_CURRENT_WORD";
+        };
+
+        highlight_next_word: highlight_to_next_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(RIGHT))>;
+            label = "HIGHLIGHT_TO_NEXT_WORD";
+        };
+
+        highlight_prev_word: highlight_prev_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(LEFT))>;
+            label = "HIGHLIGHT_PREV_WORD";
+        };
     };
 
     keymap {
@@ -217,10 +254,10 @@
         nav_layer {
             display-name = "NAV";
             bindings = <
-&trans   &trans    &trans     &trans   &trans  &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &trans
-&kp DEL  &kp CAPS  &kp PSCRN  &kp INS  &trans  &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &trans
-&trans   &trans    &trans     &trans   &trans  &kp LC(LEFT)  &kp LC(DOWN)   &kp LC(UP)   &kp LC(RIGHT)  &trans
-                              &trans   &trans  &trans        &trans
+&kp CAPS        &highlight_to_line_start  &highlight_line          &highlight_to_line_end  &trans   &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &trans
+&kp LEFT_SHIFT  &kp LEFT_GUI              &kp LEFT_ALT             &kp LCTRL               &kp DEL  &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &trans
+&trans          &highlight_prev_word      &highlight_current_word  &highlight_next_word    &trans   &kp LC(LEFT)  &kp LC(DOWN)   &kp LC(UP)   &kp LC(RIGHT)  &trans
+                                                                   &trans                  &trans   &trans        &trans
             >;
         };
 
